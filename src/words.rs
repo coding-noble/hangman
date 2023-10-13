@@ -1,18 +1,23 @@
 use rand::prelude::SliceRandom;
-use rand::Rng;
 
+// Words contains a vector to hold the strings to be picked from
 pub struct Words {
     word_list: Vec<&'static str>,
 }
 
+// impl stands for Implement
 impl Words {
+    // new function acts as the constructor for the Words struct
     pub fn new(word_list: Vec<&'static str>) -> Self {
         Words { word_list }
     }
 
-    // Static method to get a random word
-    pub fn get_random_word(&self) -> Option<&'static str> {
+    // get_random_word uses the rand library to selects a random word from the vector in Words
+    pub fn get_random_word(&self) -> String {
         let mut rng = rand::thread_rng();
-        self.word_list.choose(&mut rng).copied()
+        match self.word_list.choose(&mut rng) {
+            Some(word) => word.to_string(),
+            None => panic!("No words in the list!"),
+        }
     }
 }
