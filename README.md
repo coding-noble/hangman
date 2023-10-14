@@ -6,7 +6,7 @@ Description of my Hangman Game: This is a console-based Hangman game. It utilize
 
 In summary, this comprehensive Rust project serves as a testament to my dedication to improving my programming skills. It demonstrates my progression from foundational concepts to the practical implementation of them, reflecting my commitment to continuous learning and growth as a software engineer.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/FWZl0me3DM0)
 
 # Development Environment
 
