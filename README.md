@@ -11,8 +11,7 @@ In summary, this comprehensive Rust project serves as a testament to my dedicati
 # Development Environment
 
 Language: Rust
-
-{Describe the programming language that you used and any libraries.}
+Libraries Used: rand, prelude, SliceRandom, std, io::{self, Write}, clippy
 
 # Useful Websites
 
