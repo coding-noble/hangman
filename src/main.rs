@@ -10,7 +10,24 @@ use words::Words;
 
 fn main() {
     // Set up the list of words and the Hangman object.
-    let words: Words = Words::new(vec!["programming", "rust", "code", "compiler", "ownership", "lifetime", "borrowing", "mutability", "trait", "concurrency", "async", "iterator", "closure", "dependency", "cargo", "macros"]);
+    let words: Words = Words::new(vec![
+        "programming",
+        "rust",
+        "code",
+        "compiler",
+        "ownership",
+        "lifetime",
+        "borrowing",
+        "mutability",
+        "trait",
+        "concurrency",
+        "async",
+        "iterator",
+        "closure",
+        "dependency",
+        "cargo",
+        "macros",
+    ]);
     let secret_word: String = words.get_random_word();
 
     let mut hangman: Hangman = Hangman::new(&secret_word, 10);
