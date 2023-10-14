@@ -9,21 +9,25 @@ use std::io::{self, Write};
 use words::Words;
 
 fn main() {
-    let word_list: Vec<&str> = vec!["rust", "programming", "hangman"];
-    let words: Words = Words::new(word_list);
+    // Set up the list of words and the Hangman object.
+    let words: Words = Words::new(vec!["programming", "rust", "code", "compiler", "ownership", "lifetime", "borrowing", "mutability", "trait", "concurrency", "async", "iterator", "closure", "dependency", "cargo", "macros"]);
     let secret_word: String = words.get_random_word();
 
     let mut hangman: Hangman = Hangman::new(&secret_word, 10);
 
     println!("Welcome to Hangman!");
 
+    // Main game logic
     loop {
+        // Show the blank word and number of attempts left.
         println!("Word: {}", hangman.display_word());
         println!("Attempts left: {}", hangman.get_attempts_left());
 
+        // Ask the user for a letter
         print!("Enter a letter: ");
         io::stdout().flush().unwrap();
 
+        // Process there guess
         let mut guess = String::new();
         io::stdin()
             .read_line(&mut guess)
@@ -34,6 +38,7 @@ fn main() {
             println!("You already guessed that letter!");
         }
 
+        // Check to see if the user has guessed the word or is out of attempts.
         if hangman.is_game_over() {
             println!("Game over!");
             match hangman.is_word_guessed() {
